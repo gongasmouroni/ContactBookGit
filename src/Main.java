@@ -153,4 +153,15 @@ public class Main {
         }
         else System.out.println(BOOK_EMPTY);
     }
+
+
+    private static void existPhone(Scanner in, ContactBook cBook) {
+        int number = in.nextInt();
+        if (cBook.existSharedNumber()) {
+            System.out.println(SHARED_PHONE);
+        }
+        else {
+            System.out.println(UNIQUE_PHONE);
+        }
+    }
 }
