@@ -59,6 +59,9 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
+                case EXISTS_PHONE:
+                    existPhone(in,cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
