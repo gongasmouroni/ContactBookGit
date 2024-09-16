@@ -101,7 +101,7 @@ public class ContactBook {
             Contact current = contacts[temp++];
             while (hasNext() && !result) {
                 Contact tmp = next();
-                if (tmp.getPhone() == current.getPhone() && !tmp.equals(current)) {
+                if (tmp.getPhone() == current.getPhone() && currentContact != temp) {
                     result = true;
                 }
             }
