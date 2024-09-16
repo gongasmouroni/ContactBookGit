@@ -94,18 +94,13 @@ public class ContactBook {
     }
 
     public boolean existSharedNumber() {
-        initializeIterator();
-        int temp = currentContact;
         boolean result = false;
-        while (hasNext() && !result) {
-            Contact current = contacts[temp++];
-            while (hasNext() && !result) {
-                Contact tmp = next();
-                if (tmp.getPhone() == current.getPhone() && currentContact != temp) {
+        for (int i = 0; i < counter && !result; i++) {
+            for (int j = 0; j < counter && !result; j++) {
+                if (i != j && contacts[i].getPhone() == contacts[j].getPhone()) {
                     result = true;
                 }
             }
-            initializeIterator();
         }
         return result;
     }
