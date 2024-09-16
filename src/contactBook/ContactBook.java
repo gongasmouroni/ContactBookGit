@@ -33,8 +33,8 @@ public class ContactBook {
     //Pre: name != null && hasContact(name)
     public void deleteContact(String name) {
         int index = searchIndex(name);
-        for(int i=index; i<counter; i++)
-            contacts[i] = contacts[i+1];
+        for(int i = index; i < counter; i++)
+            contacts[i] = contacts[i + 1];
         counter--;
     }
 
@@ -76,7 +76,7 @@ public class ContactBook {
         int i = 0;
         int result = -1;
         boolean found = false;
-        while (i<counter && !found)
+        while (i < counter && !found)
             if (contacts[i].getName().equals(name))
                 found = true;
             else
@@ -87,7 +87,7 @@ public class ContactBook {
 
     private void resize() {
         Contact tmp[] = new Contact[2*contacts.length];
-        for (int i=0;i<counter; i++)
+        for (int i = 0; i < counter; i++)
             tmp[i] = contacts[i];
         contacts = tmp;
     }
@@ -104,5 +104,18 @@ public class ContactBook {
     public Contact next() {
         return contacts[currentContact++];
     }
+
+    public boolean existSharedNumber() {
+        boolean result = false;
+        for (int i = 0; i < counter && !result; i++) {
+            for (int j = 0; j < counter && !result; j++) {
+                if (i != j && contacts[i].getPhone() == contacts[j].getPhone()) {
+                    result = true;
+                }
+            }
+        }
+        return result;
+    }
+
 
 }

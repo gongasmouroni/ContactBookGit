@@ -62,6 +62,9 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
+                case EXISTS_PHONE:
+                    existPhone(cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -167,5 +170,15 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+
+
+    private static void existPhone(ContactBook cBook) {
+        if (cBook.existSharedNumber()) {
+            System.out.println(SHARED_PHONE);
+        }
+        else {
+            System.out.println(UNIQUE_PHONE);
+        }
     }
 }
