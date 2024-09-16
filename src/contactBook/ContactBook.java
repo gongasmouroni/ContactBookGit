@@ -95,15 +95,17 @@ public class ContactBook {
 
     public boolean existSharedNumber() {
         initializeIterator();
+        int temp = currentContact;
         boolean result = false;
         while (hasNext() && !result) {
-            Contact current = next();
+            Contact current = contacts[temp++];
             while (hasNext() && !result) {
                 Contact tmp = next();
                 if (tmp.getPhone() == current.getPhone()) {
                     result = true;
                 }
             }
+            initializeIterator();
         }
         return result;
     }

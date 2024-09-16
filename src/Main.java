@@ -60,7 +60,7 @@ public class Main {
                     listAllContacts(cBook);
                     break;
                 case EXISTS_PHONE:
-                    existPhone(in,cBook);
+                    existPhone(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -158,8 +158,7 @@ public class Main {
     }
 
 
-    private static void existPhone(Scanner in, ContactBook cBook) {
-        int number = in.nextInt();
+    private static void existPhone(ContactBook cBook) {
         if (cBook.existSharedNumber()) {
             System.out.println(SHARED_PHONE);
         }
