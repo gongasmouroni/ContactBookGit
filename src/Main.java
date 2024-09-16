@@ -38,6 +38,9 @@ public class Main {
 
         while (!comm.equals(QUIT)){
             switch (comm) {
+                case GET_NAME:
+                    getContactName(in, cBook);
+                    break;
                 case ADD_CONTACT:
                     addContact(in,cBook);
                     break;
@@ -75,6 +78,18 @@ public class Main {
 
         input = in.nextLine().toUpperCase();
         return input;
+    }
+
+    private static void getContactName(Scanner in, ContactBook cBook) {
+        int phone;
+        phone = in.nextInt(); in.nextLine();
+
+        int index = cBook.getIndexFromNumber(phone);
+        if (index == -1) {
+            System.out.println(PHONE_NOT_EXIST);
+        } else {
+            System.out.println(cBook.getNameFromIndex(index));
+        }
     }
 
     private static void addContact(Scanner in, ContactBook cBook) {
