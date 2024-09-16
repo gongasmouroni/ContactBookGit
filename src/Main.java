@@ -9,6 +9,8 @@ public class Main {
     public static final String ADD_CONTACT    = "AC";
     public static final String REMOVE_CONTACT = "RC";
     public static final String GET_PHONE      = "GP";
+    public static final String GET_NAME       = "GN";
+    public static final String EXISTS_PHONE   = "EP";
     public static final String GET_EMAIL      = "GE";
     public static final String SET_PHONE      = "SP";
     public static final String SET_EMAIL      = "SE";
@@ -24,6 +26,10 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
+
+    public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
+    public static final String UNIQUE_PHONE = "All contacts have different phone numbers.";
+    public static final String SHARED_PHONE = "There are contacts that share phone numbers.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
